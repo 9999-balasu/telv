@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <title>Registration Form</title>
+    <script>
+        function lettersOnly(input) {
+            var regex = /[^a-z]/gi;
+            input.value = input.value.replace(regex, "");
+        }
+    </script>
+
+  
+</head>
+
+<body class="bg-red-300	mx-50;"
+">
+    <div class="  grid lg:grid-cols-1 text-align: center;">
+
+               <center><h4>Natural Form</h4>
+               </center> 
+              </div> 
+               <div class="  grid lg:grid-cols-1 text-align: center;">
+
+               <center> <h1>Registration Form</h1></center>
+            
+              </div> 
+                 
+    
+        <form id="registrationForm">
+            
+          <div class="mt-8 grid lg:grid-cols-2 gap-10  ">
+            <div >
+                    <label for="firstName" class="form-label my-4">Enter First Name</label>
+                    <input  class="w-full rounded-md 	 h-8	ps-4  mx-4"; type="text" class="form-control" id="firstName" placeholder="Letters only" onkeyup="lettersOnly(this)" required>
+                  </div>
+               
+                    <div >
+                    <label for="lastName" class="form-label">Enter Last Name</label>
+                    <input  class="w-full  rounded-md 	 h-8	ps-4 mx-4" ; type="text" class="form-control" id="lastName" placeholder="Letters only" onkeyup="lettersOnly(this)" required>
+                  </div>
+               
+                    <div>
+                    <label for="email" class="form-label">Email</label>
+                    <input  class="w-full  rounded-md 	 h-8	ps-4 mx-4"  ;type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                  </div>
+
+                    <div>
+                    <label for="phone" class="form-label"> PhoneNumber</label>
+                    <input  class="w-full  rounded-md 	 h-8	ps-4 mx-4" class="w-full"  ;type="number" class="form-control" id="phone" placeholder="Enter Phone Number" required pattern="[0-9]{10}">
+                  </div>
+
+                    <div>
+                    <label for="age" class="form-label">Age</label>
+                    <input  class="w-full  rounded-md 	 h-8	ps-4 mx-4" type="number" class="form-control" id="age" placeholder="Enter Age" required min="1">
+              
+                  </div>
+                    <div class="w-full  rounded-md 	 h-8	ps-4 mx-4">
+                    <label class="form-label  w-full  rounded-md ">Gender</label>
+                 
+                        <input type="radio" id="male" name="gender" value="Male" required>
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="Female" required>
+                        <label for="female">Female</label>
+                  
+                      </div>
+
+                        <div>
+                    <label for="city" class="form-label"> City</label>
+                    <input  class="w-full  rounded-md 	 h-8	ps-4 mx-4" type="text" class="form-control" id="city" placeholder="Enter City" onkeyup="lettersOnly(this)" required>
+                  </div>
+
+                    <div>
+                    <label for="pin" class="form-label"> Pincode</label>
+                    <input  class="w-full  rounded-md 	 h-8	ps-4 mx-4" ; type="number" class="form-control" id="pin" placeholder="Enter Pincode" required>
+                  </div>
+
+                    <div>
+                    <label for="pass" class="form-label"> Password</label>
+                    <input  class="w-full  rounded-md 	 h-8	ps-4 mx-4"  ;"type="password" class="form-control" id="pass" placeholder="Enter Password" required>
+                  </div>
+
+                    <div>
+                    <label for="address" class="form-label"> Address</label>
+                    <textarea  class="form-control ps-2  rounded-md " id="address" rows="3" placeholder="Enter Address" required></textarea>
+                
+                 
+</div>
+            
+</div>        
+<div class="  grid lg:grid-cols-1 text-align: center ;">
+  <center>
+                    <button type="submit" class="bg-amber-100 w-75 p-3  rounded-md">Register</button>
+                  </center>
+</div>
+            
+        </form>
+    </div>
+
+    <script>
+        var form = document.getElementById('registrationForm');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var age = document.getElementById('age').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var city = document.getElementById('city').value;
+            var pin = document.getElementById('pin').value;
+            var pass = document.getElementById('pass').value;
+            var address = document.getElementById('address').value;
+
+        })
+    </script>
+</body>
+
+</html>
